@@ -29,20 +29,17 @@
 
 | 层级 | 技术 |
 |------|------|
-| 前端 | Vue 3 + Vite + Element Plus |
+| 前端 | Vue 3 + Vite |
 | 后端 | Spring Boot 2.7+ / 3.x |
-| 安全 | Spring Security + JWT（双角色权限隔离） |
+| 安全 | Spring Security + JWT |
 | 数据库 | PostgreSQL 14+ |
-| 存储 | Aliyun OSS（服务端签名直传） |
+| 存储 | Aliyun OSS |
 
 
 ## 🚀 为什么这个项目值得关注？
 
-1. **真正的双角色权限隔离**：通过角色中间表实现 `ROLE_USER` / `ROLE_MERCHANT` 分离，商家可同时拥有普通用户权限。
+1. **OSS 服务端安全签名直传**：商家上传图片不经过后端中转，后端生成 STS 临时 Token 直传 OSS，安全且低带宽消耗。
 
-2. **OSS 服务端安全签名直传**：商家上传图片不经过后端中转，后端生成 STS 临时 Token 直传 OSS，安全且低带宽消耗。
-
-3. **PostgreSQL 高级特性**：JSONB 存储商品异构参数，CTE 递归查询实现类目树。
 
 ## ⚡ 快速开始
 
