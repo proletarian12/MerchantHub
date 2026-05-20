@@ -1,4 +1,4 @@
-# 🛍️ [Your Project Name] - 双端分离的全栈电商平台
+# 🛍️ [MerchantHub] - 双端分离的全栈电商平台
 
 > **一个真正具备完整商家后台的B2C商城，而不只是一个“好看”的购物页面。**
 > 基于 Vue3 + Spring Boot + PostgreSQL + OSS 构建，重点展示商家从入驻到商品上架的全链路闭环。
