@@ -50,7 +50,20 @@ public class UserController {
             return Map.of("code", 400, "message", "手机号和密码不能为空");
         }
 
-        return userService.login(phone, password);
+        Map<String, Object> result = userService.login(phone, password);
+
+        if ((int) result.get("code") != 200) {
+            return result;
+        }
+
+        Long userId = (Long) result.get("userId");
+        String userPhone = (String) result.get("phone");
+        String role = (String) result.get("role");
+
+        String token = jwtUtil.generateToken(userId, userPhone);
+
+        result.put("token", token);
+        return result;
     }
 
     /**

@@ -40,7 +40,7 @@ public class UserService {
         // 2. 创建新用户
         User user = new User();
         user.setPhone(phone);
-        user.setPassword(PasswordUtil.encrypt(password));
+        user.setPassword(PasswordUtil.hash(password));
         user.setNickname(nickname != null ? nickname : "用户" + phone.substring(7));
         user.setLastLoginTime(new Date());
 

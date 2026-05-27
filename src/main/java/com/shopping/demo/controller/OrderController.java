@@ -5,6 +5,7 @@ import com.shopping.demo.entity.OrderItem;
 import com.shopping.demo.entity.Result;
 import com.shopping.demo.service.OrderService;
 import com.shopping.demo.util.JwtUtil;
+import jakarta.persistence.criteria.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,12 +30,12 @@ public class OrderController {
      * 创建订单
      */
     @PostMapping("/create-order")
-    public Result createOrder(@RequestBody Map<String, Object> params, HttpServletRequest request) {
+    public Result<Order> createOrder(@RequestBody Map<String, Object> params, HttpServletRequest request) {
         try {
             // 从token中获取用户ID
             Integer userId = getUserIdFromToken(request);
             if (userId == null) {
-                return Result.error(401, "未登录或token已过期");
+                return Result.error("未登录或token已过期");
             }
 
             // 解析订单参数
@@ -99,7 +100,7 @@ public class OrderController {
      * 获取订单详情
      */
     @GetMapping("/order/{orderId}")
-    public Result getOrderDetail(@PathVariable Integer orderId, HttpServletRequest request) {
+    public Result<Order> getOrderDetail(@PathVariable Integer orderId, HttpServletRequest request) {
         try {
             Integer userId = getUserIdFromToken(request);
             if (userId == null) {

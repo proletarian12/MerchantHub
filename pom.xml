@@ -41,7 +41,16 @@
             <artifactId>javax.persistence-api</artifactId>
             <version>2.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>sts20150401</artifactId>
+            <version>1.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>credentials-java</artifactId>
+            <version>0.3.1</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>

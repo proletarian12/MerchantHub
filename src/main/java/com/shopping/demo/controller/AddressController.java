@@ -27,7 +27,7 @@ public class AddressController {
      * 获取用户地址列表
      */
     @GetMapping("/addresses")
-    public Result getAddresses(HttpServletRequest request) {
+    public Result<?> getAddresses(HttpServletRequest request) {
         try {
             // 从token中获取用户ID
             Integer userId = getUserIdFromToken(request);
@@ -47,7 +47,7 @@ public class AddressController {
      * 添加新地址
      */
     @PostMapping("/address")
-    public Result addAddress(@RequestBody Address address, HttpServletRequest request) {
+    public Result<?> addAddress(@RequestBody Address address, HttpServletRequest request) {
         try {
             // 从token中获取用户ID
             Integer userId = getUserIdFromToken(request);
@@ -76,7 +76,7 @@ public class AddressController {
      * 更新地址
      */
     @PutMapping("/address/{id}")
-    public Result updateAddress(@PathVariable Integer id, @RequestBody Address address, HttpServletRequest request) {
+    public Result<?> updateAddress(@PathVariable Integer id, @RequestBody Address address, HttpServletRequest request) {
         try {
             Integer userId = getUserIdFromToken(request);
             if (userId == null) {
@@ -103,7 +103,7 @@ public class AddressController {
      * 删除地址
      */
     @DeleteMapping("/address/{id}")
-    public Result deleteAddress(@PathVariable Integer id, HttpServletRequest request) {
+    public Result<?> deleteAddress(@PathVariable Integer id, HttpServletRequest request) {
         try {
             Integer userId = getUserIdFromToken(request);
             if (userId == null) {
@@ -122,7 +122,7 @@ public class AddressController {
      * 设置默认地址
      */
     @PutMapping("/address/{id}/default")
-    public Result setDefaultAddress(@PathVariable Integer id, HttpServletRequest request) {
+    public Result<?> setDefaultAddress(@PathVariable Integer id, HttpServletRequest request) {
         try {
             Integer userId = getUserIdFromToken(request);
             if (userId == null) {

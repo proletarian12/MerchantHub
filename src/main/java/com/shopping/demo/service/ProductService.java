@@ -1,8 +1,9 @@
 package com.shopping.demo.service;
 
+import com.shopping.demo.dao.ProductDao;
 import com.shopping.demo.dto.ProductDTO;
 import com.shopping.demo.entity.ProductEntity;
-import com.shopping.demo.dao.ProductRepository;
+import com.shopping.demo.dao.ProductDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
@@ -13,7 +14,7 @@ import java.util.stream.Collectors;
 public class ProductService {
 
     @Autowired
-    private ProductRepository productRepository;
+    private ProductDao productRepository;
 
     // 搜索产品
     public List<ProductDTO> searchProducts(String keyword) {
@@ -22,6 +23,31 @@ public class ProductService {
     }
 
 
+
+
+    // 上传产品
+
+    private ProductEntity convertToEntity(ProductDTO dto) {
+        ProductEntity entity = new ProductEntity();
+        entity.setProductNum(dto.getProductNum());
+        entity.setProductName(dto.getProductName());
+        entity.setProductPrice(dto.getProductPrice());
+        entity.setProductDescription(dto.getProductDescription());
+        entity.setStoreName(dto.getStoreName());
+        entity.setStoreAvatar(dto.getStoreAvatar());
+        entity.setWarranty(dto.getWarranty());
+        entity.setStockStatus(dto.getStockStatus());
+        entity.setService(dto.getService());
+        entity.setParameters(dto.getParameters());
+        entity.setImages(dto.getImages());
+        entity.setDetailImages(dto.getDetailImages());
+        entity.setShippingInfo(dto.getShipping());
+        return entity;
+    }
+    public void addProduct(ProductDTO dto) {
+        ProductEntity entity = convertToEntity(dto);
+        productRepository.save(entity);
+    }
 
     // 获取所有产品
     public List<ProductDTO> getAllProducts() {

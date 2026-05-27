@@ -162,8 +162,6 @@ public class CartService {
      */
     private CartItemDTO convertToDTO(CartItem item) {
         CartItemDTO dto = new CartItemDTO();
-        dto.setId(item.getId());
-        dto.setUserId(item.getUserId());
         dto.setProductId(item.getProductId());
         dto.setProductNum(item.getProductNum());
         dto.setProductName(item.getProductName());

@@ -4,8 +4,6 @@ package com.shopping.demo.dto;
 import java.time.LocalDateTime;
 
 public class CartItemDTO {
-    private Long id;
-    private Long userId;
     private String productId;
     private String productNum;
     private String productName;
@@ -15,27 +13,10 @@ public class CartItemDTO {
     private Integer quantity;
     private LocalDateTime addedTime;
     private Boolean selected;
-    private Double totalPrice; // 单个商品总价 = 价格 * 数量
 
     // Constructors
     public CartItemDTO() {}
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
 
     public String getProductId() {
         return productId;
@@ -116,8 +97,6 @@ public class CartItemDTO {
         return 0.0;
     }
 
-    public void setTotalPrice(Double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
+
 }
 
