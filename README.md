@@ -11,6 +11,14 @@
   <img src="./docs/screenshots/preview.gif" alt="项目预览" width="700"/>
 </p>
 
+## 页面展示
+<p align="center">
+  <img src="./introduceImages/1.png" alt="页面展示1" width="700"/>
+  <img src="./introduceImages/2.png" alt="页面展示2" width="700"/>
+  <img src="./introduceImages/3.png" alt="页面展示3" width="700"/>
+  <img src="./introduceImages/4.png" alt="页面展示4" width="700"/>
+</p>
+
 ## ✨ 核心亮点：不止是购物，更是完整的商业闭环
 
 绝大多数同类开源项目仅实现了用户端的浏览和下单，**商家功能往往被简化或缺失**。本项目将商家端作为一级功能重点打造。
